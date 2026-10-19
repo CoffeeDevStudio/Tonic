@@ -23,6 +23,7 @@ local Elevation = {
 		window   = { tone = "low", shape = "xl", shadow = 3 },
 		hud      = { tone = "container", shape = "l", shadow = 0, hud = true },
 		menu     = { tone = "high", shape = "m", shadow = 2 },
+		dialog   = { tone = "high", shape = "xl", shadow = 3 },
 		tooltip  = { tone = "high", shape = "ml", shadow = 0 },
 		actionbar = { tone = "high", shape = "full", shadow = 0, hud = true },
 		slot     = { tone = "highest", shape = "m", shadow = 0 },

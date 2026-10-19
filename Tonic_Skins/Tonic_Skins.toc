@@ -1,0 +1,20 @@
+## Interface: 120105
+## Title: Tonic Skins
+## Notes: Material 3 skins for the Blizzard interface
+## Notes-itIT: Skin Material 3 per l'interfaccia Blizzard
+## Author: CoffeeDevStudio
+## Version: @project-version@
+## Dependencies: Tonic
+## LoadOnDemand: 1
+## Group: Tonic
+## IconTexture: Interface\AddOns\Tonic\Media\Textures\Icon64
+
+Skins\Character.lua
+Skins\Bags.lua
+Skins\GameMenu.lua
+Skins\Collections.lua
+Skins\Tooltip.lua
+Skins\Menu.lua
+Skins\Chat.lua
+Skins\UnitFrames.lua
+Skins\Nameplates.lua

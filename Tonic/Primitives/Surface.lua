@@ -12,7 +12,8 @@ local T = Tonic
 ---@field shape string|number? shape token or radius in dp
 ---@field shadow integer? shadow level 0..5
 ---@field opacity number|"hud"? fill opacity; "hud" follows the HUD opacity option
----@field outline string? outline color name (1 dp); best on opaque surfaces
+---@field outline string? outline color name
+---@field outlineWidth number? dp, default 1
 ---@field width number? dp
 ---@field height number? dp
 ---@field theme TonicTheme? pinned theme: not registered with the ThemeManager
@@ -38,28 +39,21 @@ end
 
 function SurfaceMixin:Layout()
 	local r = self.resolved
-	local Scale = T.Scale
 	local width, height = self:GetSize()
 	if width <= 0 or height <= 0 then return end
-	local px = Scale:PixelSize(self)
-	local radius = T.Shape:Radius(r.shape, self, width, height)
-	local radiusPx = radius / px
+	local radius = T.Shape:Apply(self.fillPieces, self, r.shape)
 
-	local inset = 0
 	if r.outline then
-		inset = px
 		self.outlinePieces:SetShown(true)
-		self.outlinePieces:Layout(radius, T.Shape:CircleTexture(radiusPx), 0, 0, 0, 0)
+		T.Shape:ApplyOutline(self.outlinePieces, self, r.shape, self.props.outlineWidth or 1)
 	else
 		self.outlinePieces:SetShown(false)
 	end
-	local fillRadius = math.max(radius - inset, 0)
-	self.fillPieces:Layout(fillRadius, T.Shape:CircleTexture(fillRadius / px), -inset, -inset, -inset, -inset)
 
 	local shadow = T.Elevation:GetShadow(r.shadow)
 	if shadow then
-		local blur = Scale:Dp(shadow.blur, self)
-		local y = Scale:Dp(shadow.y, self)
+		local blur = T.Scale:Dp(shadow.blur, self)
+		local y = T.Scale:Dp(shadow.y, self)
 		self.shadowPieces:SetShown(true)
 		self.shadowPieces:Layout(radius + blur, T.Shape.shadowTexture, blur, blur - y, blur, blur + y)
 	else
@@ -136,15 +130,14 @@ end
 local Surface = {}
 T.Surface = Surface
 
-local hiddenParent = CreateFrame("Frame")
-hiddenParent:Hide()
+local hiddenParent = T.hiddenParent
 
 Surface.pool = T.CreatePool(function()
 	local f = CreateFrame("Frame", nil, hiddenParent)
 	Mixin(f, SurfaceMixin)
 	f.shadowPieces = T.Shape:CreatePieces(f, "BACKGROUND", -8)
-	f.outlinePieces = T.Shape:CreatePieces(f, "BACKGROUND", -7)
-	f.fillPieces = T.Shape:CreatePieces(f, "BACKGROUND", -6)
+	f.fillPieces = T.Shape:CreatePieces(f, "BACKGROUND", -7)
+	f.outlinePieces = T.Shape:CreateOutline(f, "BACKGROUND", -6)
 	f:SetScript("OnSizeChanged", onSizeChanged)
 	return f
 end, function(_, f)

@@ -36,6 +36,8 @@ Typography.roles = {
 	labelLarge     = { "flex", "medium", 14, 20 },
 	labelMedium    = { "flex", "medium", 12, 16 },
 	labelSmall     = { "flex", "medium", 11, 16 },
+	-- Brand wordmark: Roboto Serif SemiBold.
+	wordmark       = { "serif", "semibold", 28, 36 },
 }
 
 Typography.order = {

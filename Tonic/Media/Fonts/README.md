@@ -1,6 +1,7 @@
 # Font Tonic
 
-Tonic cerca questi file in questa cartella (un file per peso). Se un file manca usa i font Blizzard e la gallery lo segnala.
+I file si generano con `python tools/fonts/build-fonts.py` (richiede `pip install fonttools`).
+Se un file manca, Tonic usa i font Blizzard e la gallery lo segnala.
 
 | File | Uso |
 |---|---|
@@ -8,9 +9,10 @@ Tonic cerca questi file in questa cartella (un file per peso). Se un file manca 
 | `RobotoSerif-SemiBold.ttf` | wordmark |
 | `RobotoFlex-Regular.ttf` | Title Large, Body |
 | `RobotoFlex-Medium.ttf` | Title Medium/Small, Label |
-| `RobotoFlex-Regular-Tnum.ttf` | valori con cifre tabulari |
-| `RobotoFlex-Medium-Tnum.ttf` | valori con cifre tabulari |
+| `RobotoFlex-Regular-Tnum.ttf`, `RobotoFlex-Medium-Tnum.ttf` | valori con cifre tabulari |
+| `MaterialSymbolsRounded.ttf` | icone (sottoinsieme dei codepoint usati) |
+| `OFL.txt` | licenza SIL Open Font License 1.1 |
 
-Roboto Flex è distribuito come font variabile, quindi le istanze statiche vanno generate (per esempio con `fonttools varLib.instancer`).
-Le varianti `-Tnum` hanno la feature `tnum` congelata nel file, perché WoW non attiva le feature OpenType.
-Licenza: SIL Open Font License 1.1 (va inclusa insieme ai file).
+WoW non gestisce assi variabili né feature OpenType: lo script crea istanze statiche e
+"congela" la feature `tnum` nelle varianti `-Tnum`. Senza Material Symbols le icone
+principali usano le texture generate in `Media/Textures/Icons`.

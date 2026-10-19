@@ -166,6 +166,136 @@ function Column:BuildStates()
 	end)
 end
 
+-- Places components left to right, wrapping at the column width.
+function Column:Flow(defs, rowHeight)
+	local x, rowY = PAD, self.y
+	for _, def in ipairs(defs) do
+		def.props.theme = self.theme
+		local item = self:Track(def.factory:Acquire(self.panel, def.props))
+		if def.state then item:SetState(def.state) end
+		local w = item:GetWidth() / T.Scale.density
+		if x + w > PAD + INNER_W and x > PAD then
+			x = PAD
+			rowY = rowY + rowHeight + GAP
+		end
+		item:ClearAllPoints()
+		T.Scale:SetPoint(item, "TOPLEFT", self.panel, "TOPLEFT", x, -(rowY + (rowHeight - item:GetHeight() / T.Scale.density) / 2))
+		x = x + w + GAP
+	end
+	self.y = rowY + rowHeight + GAP
+end
+
+function Column:BuildButtons()
+	self:Heading(L["Buttons"])
+	local defs = {}
+	for _, variant in ipairs({ "filled", "tonal", "elevated", "outlined", "text" }) do
+		defs[#defs + 1] = { factory = T.Button, props = { text = variant, variant = variant } }
+	end
+	defs[#defs + 1] = { factory = T.Button, props = { text = L["icon"], variant = "filled", icon = "add" } }
+	defs[#defs + 1] = { factory = T.Button, props = { text = L["disabled"], variant = "filled", disabled = true } }
+	defs[#defs + 1] = { factory = T.Button, props = { text = L["disabled"], variant = "outlined", disabled = true } }
+	self:Flow(defs, 40)
+	local icons = {}
+	for _, variant in ipairs({ "standard", "filled", "tonal", "outlined" }) do
+		icons[#icons + 1] = { factory = T.IconButton, props = { icon = "settings", variant = variant, tooltip = variant } }
+		icons[#icons + 1] = { factory = T.IconButton, props = { icon = "star", variant = variant, toggle = true, selected = true } }
+	end
+	icons[#icons + 1] = { factory = T.IconButton, props = { icon = "delete", variant = "filled", disabled = true } }
+	self:Flow(icons, 40)
+	self:Flow({
+		{ factory = T.FAB, props = { icon = "add", size = "small" } },
+		{ factory = T.FAB, props = { icon = "edit", color = "secondary" } },
+		{ factory = T.FAB, props = { icon = "palette", color = "tertiary" } },
+		{ factory = T.FAB, props = { icon = "add", text = L["New"], color = "surface" } },
+	}, 56)
+end
+
+function Column:BuildSelection()
+	self:Heading(L["Selection"])
+	self:Flow({
+		{ factory = T.Switch, props = { checked = false } },
+		{ factory = T.Switch, props = { checked = true } },
+		{ factory = T.Switch, props = { checked = true, icons = true } },
+		{ factory = T.Switch, props = { checked = false, icons = true } },
+		{ factory = T.Switch, props = { checked = true, disabled = true } },
+		{ factory = T.Switch, props = { checked = false, disabled = true } },
+	}, 40)
+	self:Flow({
+		{ factory = T.Checkbox, props = { checked = false } },
+		{ factory = T.Checkbox, props = { checked = true } },
+		{ factory = T.Checkbox, props = { checked = "indeterminate" } },
+		{ factory = T.Checkbox, props = { checked = true, error = true } },
+		{ factory = T.Checkbox, props = { checked = true, disabled = true } },
+		{ factory = T.Checkbox, props = { checked = false, text = L["Label"] } },
+	}, 40)
+	local group = {}
+	self:Flow({
+		{ factory = T.Radio, props = { group = group, selected = true, text = L["Dark"] } },
+		{ factory = T.Radio, props = { group = group, text = L["Light"] } },
+		{ factory = T.Radio, props = { selected = true, disabled = true } },
+		{ factory = T.Radio, props = { disabled = true } },
+	}, 40)
+	self:Flow({
+		{ factory = T.Slider, props = { min = 0.6, max = 1, step = 0.01, value = 0.88, width = INNER_W,
+			format = function(v) return ("%d%%"):format(v * 100 + 0.5) end } },
+	}, 40)
+	self:Flow({ { factory = T.Slider, props = { value = 0.4, width = INNER_W, disabled = true } } }, 40)
+end
+
+function Column:BuildFields()
+	self:Heading(L["Text fields"])
+	local w = (INNER_W - GAP) / 2
+	self:Flow({
+		{ factory = T.TextField, props = { label = L["Filled"], width = w } },
+		{ factory = T.TextField, props = { label = L["Outlined"], variant = "outlined", width = w } },
+		{ factory = T.TextField, props = { label = L["Name"], text = "Tonic", width = w, supporting = L["Supporting text"] } },
+		{ factory = T.TextField, props = { label = L["Name"], variant = "outlined", width = w, error = L["Error text"] } },
+	}, 76)
+end
+
+function Column:BuildContainers()
+	self:Heading(L["Tabs, cards and lists"])
+	self:Flow({ { factory = T.Tabs, props = { width = INNER_W, selected = 2,
+		tabs = { { text = L["Appearance"] }, { text = L["Skins"] }, { text = L["Profiles"] } } } } }, 48)
+	local w = (INNER_W - 2 * GAP) / 3
+	self:Flow({
+		{ factory = T.Card, props = { variant = "elevated", width = w, height = 96, title = "elevated", text = L["Card text"] } },
+		{ factory = T.Card, props = { variant = "filled", width = w, height = 96, title = "filled", text = L["Card text"] } },
+		{ factory = T.Card, props = { variant = "outlined", width = w, height = 96, title = "outlined", text = L["Card text"],
+			onClick = function() end } },
+	}, 96)
+	self:Flow({ { factory = T.List, props = { width = INNER_W, height = 3 * 72, selectable = true, items = {
+		{ headline = L["Character"], supporting = L["Window, slots, item level"], icon = "person", trailing = "ok" },
+		{ headline = L["Bags"], supporting = L["Quality containers"], icon = "search", trailing = "ok" },
+		{ headline = L["Tooltips"], supporting = L["Rich tooltip surface"], icon = "info", trailing = "ok" },
+		{ headline = L["Chat"], supporting = L["HUD panel and fields"], icon = "menu" },
+	} } } }, 3 * 72)
+end
+
+function Column:BuildOverlays()
+	self:Heading(L["Overlays (current theme)"])
+	self:Flow({
+		{ factory = T.Button, props = { text = "Dialog", variant = "tonal", onClick = function()
+			T.Dialog:Show({ icon = "palette", title = L["Apply the theme?"], text = L["Dialog sample text"],
+				actions = { { text = L["Cancel"] }, { text = L["Apply"] } } })
+		end } },
+		{ factory = T.Button, props = { text = "Snackbar", variant = "tonal", onClick = function()
+			T.Snackbar:Show(L["Profile saved"], { action = L["Undo"] })
+		end } },
+		{ factory = T.Button, props = { text = "Menu", variant = "tonal", onClick = function(button)
+			T.Menu:Open(button, {
+				{ text = L["Dark"], icon = "dark_mode", checked = true },
+				{ text = L["Light"], icon = "light_mode" },
+				{ divider = true },
+				{ text = L["Options"], icon = "settings", trailing = "/tonic" },
+				{ text = L["disabled"], disabled = true },
+			})
+		end } },
+		{ factory = T.Button, props = { text = "Tooltip", variant = "outlined",
+			tooltip = { title = L["Rich tooltip"], text = L["Tooltip sample text"] } } },
+	}, 40)
+end
+
 function Column:ApplyTheme(theme)
 	self.theme = theme
 	for _, item in ipairs(self.items) do item:ApplyTheme(theme) end
@@ -184,6 +314,11 @@ local function buildColumn(parent, mode, theme, x)
 	col:BuildTypography()
 	col:BuildSemantic()
 	col:BuildStates()
+	col:BuildButtons()
+	col:BuildSelection()
+	col:BuildFields()
+	col:BuildContainers()
+	col:BuildOverlays()
 	col.y = col.y + PAD
 	col.panel:Update({ height = col.y })
 	col:ApplyTheme(theme)

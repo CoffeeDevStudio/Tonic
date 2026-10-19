@@ -7,15 +7,41 @@ local commands = {}
 
 local function usage()
 	T:Print(L["Commands:"])
+	print("  /tonic config  - " .. L["options"])
 	print("  /tonic gallery  - " .. L["show every token and primitive (dark and light)"])
+	print("  /tonic audit  - " .. L["check the skins against the current patch"])
 	print("  /tonic mode dark|light|toggle  - " .. L["color mode"])
 	print("  /tonic seed <CLASS>|auto  - " .. L["seed color (auto = your class)"])
 	print("  /tonic opacity 0.60-1.00  - " .. L["HUD panel opacity"])
 	print("  /tonic version")
 end
 
+function commands.config()
+	T:OpenConfig()
+end
+commands.options = commands.config
+
 function commands.gallery()
 	T:GetModule("Gallery"):Toggle()
+end
+
+function commands.audit()
+	local report = T.Skins:Audit()
+	if #report == 0 then
+		T:Print(L["No skins registered (is Tonic_Skins enabled?)."])
+		return
+	end
+	local problems = 0
+	for _, entry in ipairs(report) do
+		local line = ("  %s: %s"):format(entry.name, L[entry.status])
+		if #entry.missing > 0 then
+			line = line .. "  |cffffb4ab" .. L["missing:"] .. " " .. table.concat(entry.missing, ", ") .. "|r"
+		end
+		if entry.status == "error" or #entry.missing > 0 then problems = problems + 1 end
+		print(line)
+		if entry.error then print("    |cffffb4ab" .. entry.error .. "|r") end
+	end
+	T:Print(problems == 0 and L["Audit: everything in place."] or (L["Audit: skins to check:"] .. " " .. problems))
 end
 
 function commands.mode(arg)
@@ -53,6 +79,7 @@ end
 SLASH_TONIC1 = "/tonic"
 SlashCmdList.TONIC = function(input)
 	local command, arg = (input or ""):match("^%s*(%S*)%s*(.-)%s*$")
+	if command == "" then return T:OpenConfig() end
 	local handler = commands[command:lower()]
 	if handler then handler(arg) else usage() end
 end

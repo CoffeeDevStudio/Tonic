@@ -9,6 +9,8 @@ T.DB:AddDefaults("profile", {
 		seed = "auto",     -- "auto" = class of the character, or a classFile / "DEFAULT"
 		hudOpacity = 0.88, -- 0.60..1.00
 		ripple = true,
+		motion = true,
+		harmonizeHealth = true, -- false: health keeps its base hue (readability with warm seeds)
 	},
 })
 
@@ -91,6 +93,13 @@ function ThemeManager:Build(seed, mode)
 	local options = T.db and T.db.profile.theme
 	theme.hudOpacity = options and options.hudOpacity or 0.88
 	theme.ripple = not options or options.ripple ~= false
+	local palette = T.Scheme:Get(theme.seed, mode)
+	if options and options.harmonizeHealth == false then
+		theme.semantic = setmetatable({ health = palette.semantic.healthBase }, { __index = palette.semantic })
+	else
+		theme.semantic = palette.semantic
+	end
+	T.Motion.enabled = not options or options.motion ~= false
 	return theme
 end
 
@@ -158,7 +167,8 @@ end
 local module = T:NewModule("Theme")
 
 function module:OnInitialize()
-	ThemeManager:Refresh(true)
+	-- Not silent: objects registered at file load (skin helpers) get their first theme.
+	ThemeManager:Refresh()
 	T.Events:RegisterMessage("Tonic.ProfileChanged", self, function() ThemeManager:Refresh() end)
 end
 

@@ -15,8 +15,14 @@ if not T then return end
 Tonic = T
 
 T.name = ADDON_NAME
-T.version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version") or "dev"
+-- The packager replaces @project-version@; an unpackaged checkout shows "dev".
+local version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version")
+T.version = (version and not version:find("^@")) and version or "dev"
 T.mediaPath = "Interface\\AddOns\\" .. ADDON_NAME .. "\\Media\\"
+
+-- Parent of every pooled frame while it is free.
+T.hiddenParent = CreateFrame("Frame")
+T.hiddenParent:Hide()
 
 local PREFIX = "|cff86d1eaTonic|r:"
 

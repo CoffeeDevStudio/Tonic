@@ -4,6 +4,9 @@
 ## Notes-itIT: Material 3 per WoW · la tua UI nei colori della tua classe
 ## Author: CoffeeDevStudio
 ## Version: @project-version@
+## IconTexture: Interface\AddOns\Tonic\Media\Textures\Icon64
+## Category: Interface Enhancements
+## Group: Tonic
 ## SavedVariables: TonicDB
 ## SavedVariablesPerCharacter: TonicCharDB
 
@@ -17,6 +20,7 @@ Core\Combat.lua
 Core\DB.lua
 Core\Modules.lua
 Core\Scale.lua
+Core\Options.lua
 
 Theme\Palettes.generated.lua
 Theme\Scheme.lua
@@ -28,7 +32,33 @@ Theme\ThemeManager.lua
 
 Primitives\Surface.lua
 Primitives\Text.lua
+Primitives\StateLayer.lua
+Primitives\Ripple.lua
+Primitives\Icon.lua
 
+Components\Component.lua
+Components\Button.lua
+Components\IconButton.lua
+Components\FAB.lua
+Components\Card.lua
+Components\Switch.lua
+Components\Checkbox.lua
+Components\Radio.lua
+Components\Slider.lua
+Components\TextField.lua
+Components\Tooltip.lua
+Components\Menu.lua
+Components\Dialog.lua
+Components\Snackbar.lua
+Components\Tabs.lua
+Components\List.lua
+
+Skin\SkinEngine.lua
+Skin\Helpers.lua
+
+Brand\Logo.lua
+Brand\Minimap.lua
+
+Core\DefaultOptions.lua
 Gallery\Gallery.lua
-
 Core\Slash.lua

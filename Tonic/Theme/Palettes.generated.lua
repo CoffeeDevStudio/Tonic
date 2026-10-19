@@ -47,6 +47,11 @@ T.Palettes = {
           surfaceVariant = { 0.3137, 0.2706, 0.2275 },
           surfaceTint = { 0.9804, 0.7294, 0.451 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8667, 0.7333 },
+          tonePrimary80 = { 0.9804, 0.7294, 0.451 },
+          tonePrimary60 = { 0.7451, 0.5216, 0.2627 },
+          tonePrimary40 = { 0.5176, 0.3294, 0.0824 },
+          toneTertiary80 = { 0.7412, 0.8, 0.6118 },
         },
         semantic = {
           health = {
@@ -127,6 +132,12 @@ T.Palettes = {
             container = { 0.4235, 0.2275, 0.0 },
             onContainer = { 1.0, 0.8627, 0.7569 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -166,6 +177,11 @@ T.Palettes = {
           surfaceVariant = { 0.9451, 0.8745, 0.8157 },
           surfaceTint = { 0.5176, 0.3294, 0.0824 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8667, 0.7333 },
+          tonePrimary80 = { 0.9804, 0.7294, 0.451 },
+          tonePrimary60 = { 0.7451, 0.5216, 0.2627 },
+          tonePrimary40 = { 0.5176, 0.3294, 0.0824 },
+          toneTertiary80 = { 0.7412, 0.8, 0.6118 },
         },
         semantic = {
           health = {
@@ -246,6 +262,12 @@ T.Palettes = {
             container = { 1.0, 0.8627, 0.7569 },
             onContainer = { 0.1804, 0.0824, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -288,6 +310,11 @@ T.Palettes = {
           surfaceVariant = { 0.3137, 0.2627, 0.2824 },
           surfaceTint = { 1.0, 0.6902, 0.8157 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8471, 0.902 },
+          tonePrimary80 = { 1.0, 0.6902, 0.8157 },
+          tonePrimary60 = { 0.7647, 0.4824, 0.6039 },
+          tonePrimary40 = { 0.5412, 0.2902, 0.4 },
+          toneTertiary80 = { 0.9451, 0.7333, 0.5922 },
         },
         semantic = {
           health = {
@@ -368,6 +395,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -407,6 +440,11 @@ T.Palettes = {
           surfaceVariant = { 0.9451, 0.8706, 0.8902 },
           surfaceTint = { 0.5412, 0.2902, 0.4 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8471, 0.902 },
+          tonePrimary80 = { 1.0, 0.6902, 0.8157 },
+          tonePrimary60 = { 0.7647, 0.4824, 0.6039 },
+          tonePrimary40 = { 0.5412, 0.2902, 0.4 },
+          toneTertiary80 = { 0.9451, 0.7333, 0.5922 },
         },
         semantic = {
           health = {
@@ -487,6 +525,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -529,6 +573,11 @@ T.Palettes = {
           surfaceVariant = { 0.2667, 0.2824, 0.2392 },
           surfaceTint = { 0.702, 0.8157, 0.5373 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8078, 0.9294, 0.6353 },
+          tonePrimary80 = { 0.702, 0.8157, 0.5373 },
+          tonePrimary60 = { 0.4941, 0.6039, 0.3451 },
+          tonePrimary40 = { 0.302, 0.4, 0.1647 },
+          toneTertiary80 = { 0.6275, 0.8157, 0.7961 },
         },
         semantic = {
           health = {
@@ -609,6 +658,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -648,6 +703,11 @@ T.Palettes = {
           surfaceVariant = { 0.8824, 0.8941, 0.8353 },
           surfaceTint = { 0.302, 0.4, 0.1647 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8078, 0.9294, 0.6353 },
+          tonePrimary80 = { 0.702, 0.8157, 0.5373 },
+          tonePrimary60 = { 0.4941, 0.6039, 0.3451 },
+          tonePrimary40 = { 0.302, 0.4, 0.1647 },
+          toneTertiary80 = { 0.6275, 0.8157, 0.7961 },
         },
         semantic = {
           health = {
@@ -728,6 +788,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -770,6 +836,11 @@ T.Palettes = {
           surfaceVariant = { 0.2863, 0.2784, 0.2275 },
           surfaceTint = { 0.8196, 0.7882, 0.451 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9333, 0.898, 0.549 },
+          tonePrimary80 = { 0.8196, 0.7882, 0.451 },
+          tonePrimary60 = { 0.6039, 0.5765, 0.2627 },
+          tonePrimary40 = { 0.4, 0.3765, 0.0784 },
+          toneTertiary80 = { 0.651, 0.8157, 0.7255 },
         },
         semantic = {
           health = {
@@ -850,6 +921,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -889,6 +966,11 @@ T.Palettes = {
           surfaceVariant = { 0.9059, 0.8902, 0.8157 },
           surfaceTint = { 0.4, 0.3765, 0.0784 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9333, 0.898, 0.549 },
+          tonePrimary80 = { 0.8196, 0.7882, 0.451 },
+          tonePrimary60 = { 0.6039, 0.5765, 0.2627 },
+          tonePrimary40 = { 0.4, 0.3765, 0.0784 },
+          toneTertiary80 = { 0.651, 0.8157, 0.7255 },
         },
         semantic = {
           health = {
@@ -969,6 +1051,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -1011,6 +1099,11 @@ T.Palettes = {
           surfaceVariant = { 0.2471, 0.2824, 0.2902 },
           surfaceTint = { 0.5098, 0.8275, 0.8784 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6196, 0.9373, 0.9922 },
+          tonePrimary80 = { 0.5098, 0.8275, 0.8784 },
+          tonePrimary60 = { 0.2863, 0.6118, 0.6627 },
+          tonePrimary40 = { 0.0, 0.4078, 0.4549 },
+          toneTertiary80 = { 0.7294, 0.7765, 0.9176 },
         },
         semantic = {
           health = {
@@ -1091,6 +1184,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -1130,6 +1229,11 @@ T.Palettes = {
           surfaceVariant = { 0.8588, 0.8941, 0.902 },
           surfaceTint = { 0.0, 0.4078, 0.4549 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6196, 0.9373, 0.9922 },
+          tonePrimary80 = { 0.5098, 0.8275, 0.8784 },
+          tonePrimary60 = { 0.2863, 0.6118, 0.6627 },
+          tonePrimary40 = { 0.0, 0.4078, 0.4549 },
+          toneTertiary80 = { 0.7294, 0.7765, 0.9176 },
         },
         semantic = {
           health = {
@@ -1210,6 +1314,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -1252,6 +1362,11 @@ T.Palettes = {
           surfaceVariant = { 0.3216, 0.2627, 0.2627 },
           surfaceTint = { 1.0, 0.702, 0.7059 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8549, 0.851 },
+          tonePrimary80 = { 1.0, 0.702, 0.7059 },
+          tonePrimary60 = { 0.7961, 0.4784, 0.4863 },
+          tonePrimary40 = { 0.5608, 0.2902, 0.298 },
+          toneTertiary80 = { 0.898, 0.7569, 0.5529 },
         },
         semantic = {
           health = {
@@ -1332,6 +1447,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -1371,6 +1492,11 @@ T.Palettes = {
           surfaceVariant = { 0.9569, 0.8667, 0.8667 },
           surfaceTint = { 0.5608, 0.2902, 0.298 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8549, 0.851 },
+          tonePrimary80 = { 1.0, 0.702, 0.7059 },
+          tonePrimary60 = { 0.7961, 0.4784, 0.4863 },
+          tonePrimary40 = { 0.5608, 0.2902, 0.298 },
+          toneTertiary80 = { 0.898, 0.7569, 0.5529 },
         },
         semantic = {
           health = {
@@ -1451,6 +1577,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -1493,6 +1625,11 @@ T.Palettes = {
           surfaceVariant = { 0.2667, 0.2784, 0.3059 },
           surfaceTint = { 0.6667, 0.7804, 1.0 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8392, 0.8902, 1.0 },
+          tonePrimary80 = { 0.6667, 0.7804, 1.0 },
+          tonePrimary60 = { 0.4549, 0.5686, 0.7804 },
+          tonePrimary40 = { 0.2549, 0.3725, 0.5686 },
+          toneTertiary80 = { 0.8627, 0.7373, 0.8784 },
         },
         semantic = {
           health = {
@@ -1573,6 +1710,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -1612,6 +1755,11 @@ T.Palettes = {
           surfaceVariant = { 0.8784, 0.8863, 0.9255 },
           surfaceTint = { 0.2549, 0.3725, 0.5686 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8392, 0.8902, 1.0 },
+          tonePrimary80 = { 0.6667, 0.7804, 1.0 },
+          tonePrimary60 = { 0.4549, 0.5686, 0.7804 },
+          tonePrimary40 = { 0.2549, 0.3725, 0.5686 },
+          toneTertiary80 = { 0.8627, 0.7373, 0.8784 },
         },
         semantic = {
           health = {
@@ -1692,6 +1840,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -1734,6 +1888,11 @@ T.Palettes = {
           surfaceVariant = { 0.251, 0.2824, 0.2941 },
           surfaceTint = { 0.5255, 0.8196, 0.9176 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.702, 0.9216, 1.0 },
+          tonePrimary80 = { 0.5255, 0.8196, 0.9176 },
+          tonePrimary60 = { 0.3059, 0.6078, 0.698 },
+          tonePrimary40 = { 0.0078, 0.4039, 0.4902 },
+          toneTertiary80 = { 0.7569, 0.7686, 0.9216 },
         },
         semantic = {
           health = {
@@ -1814,6 +1973,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -1853,6 +2018,11 @@ T.Palettes = {
           surfaceVariant = { 0.8588, 0.8941, 0.9098 },
           surfaceTint = { 0.0078, 0.4039, 0.4902 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.702, 0.9216, 1.0 },
+          tonePrimary80 = { 0.5255, 0.8196, 0.9176 },
+          tonePrimary60 = { 0.3059, 0.6078, 0.698 },
+          tonePrimary40 = { 0.0078, 0.4039, 0.4902 },
+          toneTertiary80 = { 0.7569, 0.7686, 0.9216 },
         },
         semantic = {
           health = {
@@ -1933,6 +2103,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -1975,6 +2151,11 @@ T.Palettes = {
           surfaceVariant = { 0.2784, 0.2745, 0.3098 },
           surfaceTint = { 0.7569, 0.7569, 1.0 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8863, 0.8745, 1.0 },
+          tonePrimary80 = { 0.7569, 0.7569, 1.0 },
+          tonePrimary60 = { 0.5451, 0.5451, 0.7843 },
+          tonePrimary40 = { 0.3451, 0.349, 0.5725 },
+          toneTertiary80 = { 0.9137, 0.7255, 0.8275 },
         },
         semantic = {
           health = {
@@ -2055,6 +2236,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -2094,6 +2281,11 @@ T.Palettes = {
           surfaceVariant = { 0.8941, 0.8824, 0.9255 },
           surfaceTint = { 0.3451, 0.349, 0.5725 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.8863, 0.8745, 1.0 },
+          tonePrimary80 = { 0.7569, 0.7569, 1.0 },
+          tonePrimary60 = { 0.5451, 0.5451, 0.7843 },
+          tonePrimary40 = { 0.3451, 0.349, 0.5725 },
+          toneTertiary80 = { 0.9137, 0.7255, 0.8275 },
         },
         semantic = {
           health = {
@@ -2174,6 +2366,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -2216,6 +2414,11 @@ T.Palettes = {
           surfaceVariant = { 0.2549, 0.2863, 0.2588 },
           surfaceTint = { 0.5843, 0.8353, 0.6588 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6902, 0.9451, 0.7647 },
+          tonePrimary80 = { 0.5843, 0.8353, 0.6588 },
+          tonePrimary60 = { 0.3765, 0.6196, 0.4588 },
+          tonePrimary40 = { 0.1725, 0.4157, 0.2706 },
+          toneTertiary80 = { 0.6392, 0.8039, 0.8549 },
         },
         semantic = {
           health = {
@@ -2296,6 +2499,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -2335,6 +2544,11 @@ T.Palettes = {
           surfaceVariant = { 0.8627, 0.898, 0.8588 },
           surfaceTint = { 0.1725, 0.4157, 0.2706 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6902, 0.9451, 0.7647 },
+          tonePrimary80 = { 0.5843, 0.8353, 0.6588 },
+          tonePrimary60 = { 0.3765, 0.6196, 0.4588 },
+          tonePrimary40 = { 0.1725, 0.4157, 0.2706 },
+          toneTertiary80 = { 0.6392, 0.8039, 0.8549 },
         },
         semantic = {
           health = {
@@ -2415,6 +2629,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -2457,6 +2677,11 @@ T.Palettes = {
           surfaceVariant = { 0.3216, 0.2667, 0.2353 },
           surfaceTint = { 1.0, 0.7137, 0.5451 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8588, 0.7843 },
+          tonePrimary80 = { 1.0, 0.7137, 0.5451 },
+          tonePrimary60 = { 0.7804, 0.502, 0.3255 },
+          tonePrimary40 = { 0.549, 0.3098, 0.149 },
+          toneTertiary80 = { 0.8, 0.7882, 0.5725 },
         },
         semantic = {
           health = {
@@ -2537,6 +2762,12 @@ T.Palettes = {
             container = { 0.451, 0.2078, 0.0 },
             onContainer = { 1.0, 0.8588, 0.7804 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -2576,6 +2807,11 @@ T.Palettes = {
           surfaceVariant = { 0.9569, 0.8706, 0.8275 },
           surfaceTint = { 0.549, 0.3098, 0.149 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 1.0, 0.8588, 0.7843 },
+          tonePrimary80 = { 1.0, 0.7137, 0.5451 },
+          tonePrimary60 = { 0.7804, 0.502, 0.3255 },
+          tonePrimary40 = { 0.549, 0.3098, 0.149 },
+          toneTertiary80 = { 0.8, 0.7882, 0.5725 },
         },
         semantic = {
           health = {
@@ -2656,6 +2892,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.7804 },
             onContainer = { 0.1922, 0.0745, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -2698,6 +2940,11 @@ T.Palettes = {
           surfaceVariant = { 0.298, 0.2667, 0.298 },
           surfaceTint = { 0.9059, 0.7137, 0.9451 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9804, 0.8431, 1.0 },
+          tonePrimary80 = { 0.9059, 0.7137, 0.9451 },
+          tonePrimary60 = { 0.6824, 0.5059, 0.7216 },
+          tonePrimary40 = { 0.4706, 0.3098, 0.5137 },
+          toneTertiary80 = { 0.9608, 0.7176, 0.698 },
         },
         semantic = {
           health = {
@@ -2778,6 +3025,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -2817,6 +3070,11 @@ T.Palettes = {
           surfaceVariant = { 0.9216, 0.8745, 0.9137 },
           surfaceTint = { 0.4706, 0.3098, 0.5137 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9804, 0.8431, 1.0 },
+          tonePrimary80 = { 0.9059, 0.7137, 0.9451 },
+          tonePrimary60 = { 0.6824, 0.5059, 0.7216 },
+          tonePrimary40 = { 0.4706, 0.3098, 0.5137 },
+          toneTertiary80 = { 0.9608, 0.7176, 0.698 },
         },
         semantic = {
           health = {
@@ -2897,6 +3155,12 @@ T.Palettes = {
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -2939,6 +3203,11 @@ T.Palettes = {
           surfaceVariant = { 0.2471, 0.2863, 0.2745 },
           surfaceTint = { 0.5216, 0.8392, 0.7569 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6314, 0.949, 0.8667 },
+          tonePrimary80 = { 0.5216, 0.8392, 0.7569 },
+          tonePrimary60 = { 0.3059, 0.6235, 0.549 },
+          tonePrimary40 = { 0.0353, 0.4196, 0.3529 },
+          toneTertiary80 = { 0.6667, 0.7961, 0.8941 },
         },
         semantic = {
           health = {
@@ -3019,6 +3288,12 @@ T.Palettes = {
             container = { 0.4039, 0.2392, 0.0 },
             onContainer = { 1.0, 0.8667, 0.7333 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -3058,6 +3333,11 @@ T.Palettes = {
           surfaceVariant = { 0.8588, 0.898, 0.8784 },
           surfaceTint = { 0.0353, 0.4196, 0.3529 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.6314, 0.949, 0.8667 },
+          tonePrimary80 = { 0.5216, 0.8392, 0.7569 },
+          tonePrimary60 = { 0.3059, 0.6235, 0.549 },
+          tonePrimary40 = { 0.0353, 0.4196, 0.3529 },
+          toneTertiary80 = { 0.6667, 0.7961, 0.8941 },
         },
         semantic = {
           health = {
@@ -3138,6 +3418,12 @@ T.Palettes = {
             container = { 1.0, 0.8667, 0.7333 },
             onContainer = { 0.1686, 0.0902, 0.0 },
           },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
+          },
         },
       },
     },
@@ -3180,6 +3466,11 @@ T.Palettes = {
           surfaceVariant = { 0.2863, 0.2706, 0.3059 },
           surfaceTint = { 0.8118, 0.7412, 0.9961 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9137, 0.8667, 1.0 },
+          tonePrimary80 = { 0.8118, 0.7412, 0.9961 },
+          tonePrimary60 = { 0.5961, 0.5294, 0.7725 },
+          tonePrimary40 = { 0.3961, 0.3333, 0.5608 },
+          toneTertiary80 = { 0.9373, 0.7216, 0.7843 },
         },
         semantic = {
           health = {
@@ -3260,6 +3551,12 @@ T.Palettes = {
             container = { 0.5098, 0.1529, 0.0 },
             onContainer = { 1.0, 0.8588, 0.8118 },
           },
+          healthBase = {
+            color = { 0.3843, 0.8784, 0.3608 },
+            bar = { 0.2667, 0.7647, 0.2627 },
+            container = { 0.0, 0.3255, 0.0392 },
+            onContainer = { 0.4941, 0.9922, 0.4588 },
+          },
         },
       },
       light = {
@@ -3299,6 +3596,11 @@ T.Palettes = {
           surfaceVariant = { 0.9059, 0.8784, 0.9216 },
           surfaceTint = { 0.3961, 0.3333, 0.5608 },
           shadow = { 0.0, 0.0, 0.0 },
+          tonePrimary90 = { 0.9137, 0.8667, 1.0 },
+          tonePrimary80 = { 0.8118, 0.7412, 0.9961 },
+          tonePrimary60 = { 0.5961, 0.5294, 0.7725 },
+          tonePrimary40 = { 0.3961, 0.3333, 0.5608 },
+          toneTertiary80 = { 0.9373, 0.7216, 0.7843 },
         },
         semantic = {
           health = {
@@ -3378,6 +3680,12 @@ T.Palettes = {
             bar = { 0.7765, 0.3294, 0.1569 },
             container = { 1.0, 0.8588, 0.8118 },
             onContainer = { 0.2235, 0.0471, 0.0 },
+          },
+          healthBase = {
+            color = { 0.0, 0.4314, 0.0667 },
+            bar = { 0.0, 0.5451, 0.0941 },
+            container = { 0.4941, 0.9922, 0.4588 },
+            onContainer = { 0.0, 0.1333, 0.0078 },
           },
         },
       },

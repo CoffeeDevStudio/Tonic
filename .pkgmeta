@@ -4,11 +4,19 @@ enable-nolib-creation: no
 
 move-folders:
   Tonic/Tonic: Tonic
+  Tonic/Tonic_Skins: Tonic_Skins
+  Tonic/Tonic_Config: Tonic_Config
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
 
 ignore:
   - tools
   - spec
   - test
+  - brand
   - CLAUDE.md
+  - RELEASING.md
   - .busted
   - .luacheckrc

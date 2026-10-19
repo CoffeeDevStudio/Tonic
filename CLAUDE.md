@@ -24,18 +24,25 @@ su CurseForge e Wago, e usabile da altri addon come libreria UI.
 ```
 Tonic/
   Tonic.toc
-  Libs/                  LibStub (fase 1); poi CallbackHandler, LibSharedMedia, LibSerialize, LibDeflate
-  Core/                  Init, Pool, Modules (lifecycle), Events (bus), Combat (coda lockdown), DB (profili + migrazioni), Scale (dp → pixel-perfect), Slash
+  Libs/                  LibStub (le altre librerie arriveranno via .pkgmeta quando servono)
+  Core/                  Init, Pool, Events (bus), Combat (coda lockdown), DB (profili + migrazioni), Modules (lifecycle),
+                         Scale (dp → pixel-perfect), Options (registry dichiarativo), DefaultOptions, Slash
   Locales/               traduzioni (le chiavi sono le stringhe inglesi)
-  Theme/                 Palettes.generated.lua (GENERATO), Scheme, Typography, Shape, Elevation, Motion, ThemeManager
-  Primitives/            Surface, StateLayer, Ripple, Text, Icon
-  Components/            Button, IconButton, FAB, Card, Switch, Checkbox, Radio, Slider, TextField, Menu, Dialog, Snackbar, Tabs, Tooltip, List
-  Skin/                  SkinEngine (registry + ADDON_LOADED), Helpers (StripTextures, SkinButton…)
-  Gallery/               /tonic gallery (QA visiva)
-  Media/                 Fonts (Roboto Serif, Roboto Flex statici, Material Symbols Rounded), Textures (.tga GENERATE: Circle16..128, Shadow64)
-Tonic_Skins/             uno skin per area Blizzard
-Tonic_Config/            opzioni dichiarative renderizzate con i componenti Tonic (dogfooding)
-tools/tokens/            pipeline Node che genera Palettes.generated.lua e le texture (npm run gen / npm test)
+  Theme/                 Palettes.generated.lua (GENERATO), Scheme, Typography, Shape (riempimenti + contorni 9-slice),
+                         Elevation, Motion (ticker condiviso), ThemeManager
+  Primitives/            Surface, Text, StateLayer, Ripple, Icon
+  Components/            Component (base: pool, stati, ripple), Button, IconButton, FAB, Card, Switch, Checkbox, Radio,
+                         Slider, TextField, Menu, Dialog, Snackbar, Tabs, Tooltip, List
+  Skin/                  SkinEngine (registry, ADDON_LOADED, audit), Helpers (StripFrame, Backdrop, SkinButton, SkinTab…)
+  Brand/                 Logo (livelli tintati con i toni della classe), Minimap (pulsante + addon compartment)
+  Gallery/               /tonic gallery (QA visiva di token e componenti)
+  Media/                 Fonts (generati da tools/fonts), Textures (GENERATE: Circle, Ring, Pill, Shadow, Icons, Logo, Icon64)
+Tonic_Skins/             LoadOnDemand, caricato al login: Character, Bags, GameMenu, Collections, Tooltip, Menu, Chat,
+                         UnitFrames, Nameplates
+Tonic_Config/            LoadOnDemand: renderizza T.Options con i componenti Tonic (dogfooding)
+tools/tokens/            pipeline Node: palette, texture, icone, logo (npm run gen / npm test)
+tools/fonts/             build-fonts.py: istanze statiche dei font e cifre tabulari
+brand/                   icone per gli store (GENERATE)
 spec/                    test busted (stub WoW in spec/helpers/wow.lua)
 test/                    tonic-tokens.json di riferimento
 ```
@@ -88,7 +95,7 @@ deve esistere un solo ThemeManager e i path dei media sono fissi.
   - Non utilizzabile: 38%.
   - Magia dissipabile: badge tertiaryContainer.
 - **Qualità oggetti**: contenitore tonale più nome nel tono 80. Comune neutro, senza tinta. Solo il leggendario ha anche l'anello.
-- **Decisione aperta**: con semi caldi la salute armonizzata vira al giallo-verde (`#83BC09`). Valutare se escludere la salute dall'armonizzazione per leggibilità.
+- **Salute e semi caldi**: con semi caldi la salute armonizzata vira al giallo-verde (`#83BC09`). La pipeline genera anche `healthBase` (non armonizzata) e l'opzione "Armonizza la salute" (`theme.harmonizeHealth`, predefinita attiva) sceglie quale usare.
 
 ## Brand
 
@@ -107,8 +114,12 @@ deve esistere un solo ThemeManager e i path dei media sono fissi.
 
 ## Roadmap
 
-1. Core, pipeline dei token, primitive Surface/Text e gallery.
-2. Button, IconButton, Switch, Checkbox, Slider, TextField e `Tonic_Config` in dogfooding.
-3. Skin engine sulle schermate fuori combattimento: Character, Borse, Game Menu, Collections.
-4. Tooltip, menu, chat.
-5. Per ultimi unit frame e nameplate: solo pass-through dei secret values.
+1. Core, pipeline dei token, primitive Surface/Text e gallery. (fatto)
+2. Componenti e `Tonic_Config` in dogfooding. (fatto)
+3. Skin engine sulle schermate fuori combattimento: Character, Borse, Game Menu, Collections. (fatto)
+4. Tooltip, menu, chat. (fatto)
+5. Unit frame e nameplate: solo pass-through dei secret values. (fatto)
+6. Release: vedi `RELEASING.md` (font, ID degli store, secrets, licenza, verifica in gioco).
+
+Le skin sono scritte sui nomi dei frame Blizzard noti fino alla 12.1.5 e vanno verificate in gioco con `/tonic audit`:
+una skin con frame mancanti viene saltata (stato "missing") invece di andare in errore.
