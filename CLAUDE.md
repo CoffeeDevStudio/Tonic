@@ -24,16 +24,20 @@ su CurseForge e Wago, e usabile da altri addon come libreria UI.
 ```
 Tonic/
   Tonic.toc
-  Libs/                  LibStub, CallbackHandler, LibSharedMedia, AceDB, LibSerialize, LibDeflate
-  Core/                  Init, Modules (lifecycle), Events (bus), Combat (coda lockdown), DB (profili + migrazioni), Scale (dp → pixel-perfect)
+  Libs/                  LibStub (fase 1); poi CallbackHandler, LibSharedMedia, LibSerialize, LibDeflate
+  Core/                  Init, Pool, Modules (lifecycle), Events (bus), Combat (coda lockdown), DB (profili + migrazioni), Scale (dp → pixel-perfect), Slash
+  Locales/               traduzioni (le chiavi sono le stringhe inglesi)
   Theme/                 Palettes.generated.lua (GENERATO), Scheme, Typography, Shape, Elevation, Motion, ThemeManager
   Primitives/            Surface, StateLayer, Ripple, Text, Icon
   Components/            Button, IconButton, FAB, Card, Switch, Checkbox, Radio, Slider, TextField, Menu, Dialog, Snackbar, Tabs, Tooltip, List
   Skin/                  SkinEngine (registry + ADDON_LOADED), Helpers (StripTextures, SkinButton…)
-  Media/                 Fonts (Roboto Serif, Roboto Flex statici, Material Symbols Rounded), Textures (.tga)
+  Gallery/               /tonic gallery (QA visiva)
+  Media/                 Fonts (Roboto Serif, Roboto Flex statici, Material Symbols Rounded), Textures (.tga GENERATE: Circle16..128, Shadow64)
 Tonic_Skins/             uno skin per area Blizzard
 Tonic_Config/            opzioni dichiarative renderizzate con i componenti Tonic (dogfooding)
-tools/tokens/            pipeline Node che genera Palettes.generated.lua e le texture
+tools/tokens/            pipeline Node che genera Palettes.generated.lua e le texture (npm run gen / npm test)
+spec/                    test busted (stub WoW in spec/helpers/wow.lua)
+test/                    tonic-tokens.json di riferimento
 ```
 
 Il core è una dipendenza standalone (`## Dependencies: Tonic`) e non va embeddato:
@@ -49,17 +53,18 @@ deve esistere un solo ThemeManager e i path dei media sono fissi.
 - **Ogni skin è isolato**: gira in `xpcall(fn, geterrorhandler())` e ha un toggle in config. Il comando `/tonic audit` verifica che i frame attesi esistano dopo ogni patch.
 - **Performance**: niente `OnUpdate` per widget (un solo ticker condiviso per i tween); pool obbligatori per i frame dinamici; liste su `ScrollBox` + `DataProvider` di Blizzard.
 - **Interface nel TOC**: usa il numero della patch live corrente, che si ottiene con `/dump select(4, GetBuildInfo())`.
+- **Globali**: oltre a `Tonic` esistono solo quelli imposti da WoW: SavedVariables, `SLASH_TONIC1`, `LibStub` e i nomi `TonicFont_*` dei Font object (richiesti da `CreateFontFamily`).
 
 ## Pipeline dei token
 
 - La sorgente è `tools/tokens/` (Node). Lo script di partenza è `gen-tokens.mjs`, con `@material/material-color-utilities@0.3.0`.
 - **Schema**: `SchemeTonalSpot`, contrasto 0, dark e light.
-- **Semi** (colore di classe): Mago `#3FC7EB`, Paladino `#F48CBA`, Druido `#FF7C0A`, Cavaliere della Morte `#C41E3A`, Evocatore `#33937F`, Stregone `#8788EE`. Da completare con tutte le classi.
+- **Semi** (colore di classe, chiave = classFile): Mago `#3FC7EB`, Paladino `#F48CBA`, Druido `#FF7C0A`, Cavaliere della Morte `#C41E3A`, Evocatore `#33937F`, Stregone `#8788EE`, Guerriero `#C69B6D`, Cacciatore `#AAD372`, Ladro `#FFF468`, Sacerdote `#FFFFFF`, Sciamano `#0070DD`, Monaco `#00FF98`, Cacciatore di Demoni `#A330C9`. `DEFAULT` `#6750A4` se la classe non è nota.
 - **Colori semantici** (salute, mana, ira, energia, ostile, canali chat, qualità degli oggetti): `Blend.harmonize` verso il seme, poi palette tonale con chroma ≥ 48.
   - Dark: color = tono 80, barra = tono 70, container = tono 30, onContainer = tono 90.
   - Light: color = tono 40, barra = tono 50, container = tono 90, onContainer = tono 10.
 - **Uscita**: `Tonic/Theme/Palettes.generated.lua`. Non si modifica mai a mano; la CI la rigenera prima del packaging.
-- **Riferimento**: `tonic-tokens.json` contiene l'output attuale per i sei semi.
+- **Riferimento**: `test/tonic-tokens.json` contiene l'output attuale per i sei semi; `npm test` verifica che la pipeline lo riproduca. In Lua la qualità comune usa la palette neutra (decisione di design), quindi diverge dal JSON solo lì.
 
 ## Decisioni di design (dai mockup)
 

@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tokens:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/tokens
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Reference tokens
+        run: npm test
+      - name: Generated files are up to date
+        run: |
+          npm run gen
+          git diff --exit-code -- ../../Tonic/Theme/Palettes.generated.lua ../../Tonic/Media/Textures
+
+  lua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leafo/gh-actions-lua@v10
+        with:
+          luaVersion: "5.1"
+      - uses: leafo/gh-actions-luarocks@v4
+      - run: luarocks install luacheck && luarocks install busted
+      - run: luacheck .
+      - run: busted

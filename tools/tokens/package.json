@@ -1,0 +1,13 @@
+{
+  "name": "tonic-tokens",
+  "private": true,
+  "type": "module",
+  "description": "Generates Tonic/Theme/Palettes.generated.lua and the shape textures",
+  "scripts": {
+    "gen": "node gen-tokens.mjs",
+    "test": "node test-tokens.mjs"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "0.3.0"
+  }
+}

@@ -1,0 +1,14 @@
+package-as: Tonic
+
+enable-nolib-creation: no
+
+move-folders:
+  Tonic/Tonic: Tonic
+
+ignore:
+  - tools
+  - spec
+  - test
+  - CLAUDE.md
+  - .busted
+  - .luacheckrc

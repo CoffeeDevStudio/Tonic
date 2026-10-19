@@ -1,0 +1,34 @@
+## Interface: 120105
+## Title: Tonic
+## Notes: Material 3 for WoW · your UI in your class colors
+## Notes-itIT: Material 3 per WoW · la tua UI nei colori della tua classe
+## Author: CoffeeDevStudio
+## Version: @project-version@
+## SavedVariables: TonicDB
+## SavedVariablesPerCharacter: TonicCharDB
+
+Libs\LibStub\LibStub.lua
+
+Core\Init.lua
+Locales\itIT.lua
+Core\Pool.lua
+Core\Events.lua
+Core\Combat.lua
+Core\DB.lua
+Core\Modules.lua
+Core\Scale.lua
+
+Theme\Palettes.generated.lua
+Theme\Scheme.lua
+Theme\Typography.lua
+Theme\Shape.lua
+Theme\Elevation.lua
+Theme\Motion.lua
+Theme\ThemeManager.lua
+
+Primitives\Surface.lua
+Primitives\Text.lua
+
+Gallery\Gallery.lua
+
+Core\Slash.lua
